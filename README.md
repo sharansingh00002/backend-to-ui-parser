@@ -5,15 +5,16 @@ A new Flutter project to parse Json data to render UI widgets
 
 ## Parsers
 
+```
 Parsers added currently - 
 
-Container\n
-Padding\n
-Center\n
-Text\n
-Column\n
-Row\n
-ListView\n
+Container
+Padding
+Center
+Text
+Column
+Row
+ListView
 Gradient - Linear & Radial
 
 Example code - 
@@ -44,6 +45,7 @@ Create a valid json String
 }''';
 
 Use Parse to parse above data - Parser.parse(jsonData)
+```
 
 Above code renders the following widget 
 
