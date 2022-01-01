@@ -1,16 +1,52 @@
 # backend_to_ui_parser
 
-A new Flutter application.
+A new Flutter project create widgets from a json String file 
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Parsers added currently - 
 
-A few resources to get you started if this is your first Flutter project:
+Container
+Padding
+Center
+Text
+Column
+Row
+ListView
+Gradient - Linear & Radial
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Example code - 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Create a valid json String 
+
+  var jsonData = '''
+{
+  "Padding" : {
+  "padding": "EdgeInsets.only(top: 40)",
+  "child" : {
+  "Container": {
+    "child": {"Column": {
+    "mainAxisAlignment": "MainAxisAlignment.center",
+    "crossAxisAlignment": "CrossAxisAlignment.center",
+    "children": [{"Container": {"color": "0xffff11ff", "height": 150, "width": 150}}, {"Text": {"text": "helllooo"}}]
+  }},
+    "color": "0xffff11ff",
+    "height": "300",
+    "width": "300",
+    "padding": "EdgeInsets.only(top: 10)",
+    "borderRadius": 32,
+    "alignment": "Alignment.center",
+    "gradient": {"LinearGradient": {"colors": ["0xff11ffff", "0xffff11ff"], "begin": "Alignment.topLeft", "end": "Alignment.bottomRight"}} 
+  }
+  }
+  }
+}''';
+
+Use Parse to parse above data - Parser.parse(jsonData)
+
+Above code renders the following widget 
+
+
+<img width="399" alt="Screenshot 2022-01-01 at 1 15 36 PM" src="https://user-images.githubusercontent.com/40237701/147846363-a8545852-20e6-45da-b318-c5372259ae76.png">
+
