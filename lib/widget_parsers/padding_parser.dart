@@ -8,7 +8,6 @@ class PaddingParser
   PaddingParser._();
 
   static getPadding(content) {
-    print("content['padding'] ${content['child']}");
     return Padding(
       padding: content.containsKey('padding')
           ? PaddingMixin.getPadding(content['padding'].toString())

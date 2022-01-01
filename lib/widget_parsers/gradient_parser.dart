@@ -6,37 +6,28 @@ import '../mixins/alignment_mixin.dart';
 class GradientParser with AlignmentMixin {
   GradientParser._();
 
-  static getGradient(String gradientString) {
+  static getGradient(Map<String, dynamic> gradientMap) {
     Gradient? gradient;
-    gradientString = gradientString.trim();
-    if (gradientString.contains("LinearGradient")) {
-      gradientString =
-          gradientString.replaceAll("LinearGradient(", "").replaceAll(")", "");
-      var rawString = '''{${gradientString.replaceAll("*", "\"")}}''';
-      Map<String, dynamic> gradientsValue = jsonDecode(rawString);
+    if (gradientMap.keys.contains("LinearGradient")) {
       List<Color> colorsList = List.empty(growable: true);
-      gradientsValue['colors'].forEach((element) {
+      gradientMap["LinearGradient"]["colors"].forEach((element) {
         colorsList.add(Color(int.parse(element.toString())));
       });
       gradient = LinearGradient(
           begin: AlignmentMixin.getAlignment(
-              gradientsValue['begin'] ?? "Alignment.centerLeft"),
+              gradientMap["LinearGradient"]['begin'] ?? "Alignment.centerLeft"),
           end: AlignmentMixin.getAlignment(
-              gradientsValue['end'] ?? "Alignment.centerRight"),
+              gradientMap["LinearGradient"]['end'] ?? "Alignment.centerRight"),
           colors: colorsList);
-    }else if(gradientString.contains("RadialGradient")){
-      gradientString =
-          gradientString.replaceAll("RadialGradient(", "").replaceAll(")", "");
-      var rawString = '''{${gradientString.replaceAll("*", "\"")}}''';
-      Map<String, dynamic> gradientsValue = jsonDecode(rawString);
+    } else if(gradientMap.keys.contains("RadialGradient")){
       List<Color> colorsList = List.empty(growable: true);
-      gradientsValue['colors'].forEach((element) {
+      gradientMap["RadialGradient"]['colors'].forEach((element) {
         colorsList.add(Color(int.parse(element.toString())));
       });
       gradient = RadialGradient(
           center: AlignmentMixin.getAlignment(
-              gradientsValue['center'] ?? "Alignment.center"),
-          radius: double.parse('${gradientsValue['radius'] ?? '0.5'}'),
+              gradientMap["RadialGradient"]['center'] ?? "Alignment.center"),
+          radius: double.parse('${gradientMap["RadialGradient"]['radius'] ?? '0.5'}'),
           colors: colorsList);
     }
     return gradient;

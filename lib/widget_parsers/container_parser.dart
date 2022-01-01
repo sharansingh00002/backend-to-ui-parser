@@ -41,7 +41,7 @@ class ContainerParser
         borderRadius: BorderRadius.circular(double.parse(
             '${content.containsKey('borderRadius') ? content['borderRadius'].toString() : '0.0'}')),
         gradient: content.containsKey('gradient')
-            ? GradientParser.getGradient(content['gradient'].toString())
+            ? GradientParser.getGradient(content['gradient'])
             : null,
       ),
       child: content.containsKey('child') ? Parser.parse(content['child'], alreadyParsed: true) : null,

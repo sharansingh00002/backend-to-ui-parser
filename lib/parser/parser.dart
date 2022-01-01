@@ -1,7 +1,9 @@
 import 'dart:convert';
 
+import 'package:backend_to_ui_parser/widget_parsers/column_parser.dart';
 import 'package:backend_to_ui_parser/widget_parsers/container_parser.dart';
 import 'package:backend_to_ui_parser/widget_parsers/padding_parser.dart';
+import 'package:backend_to_ui_parser/widget_parsers/row_parser.dart';
 import 'package:backend_to_ui_parser/widget_parsers/textParser.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +34,12 @@ class Parser {
         break;
       case "Text":
         widget = TextParser.getText(content);
+        break;
+      case "Column":
+        widget = ColumnParser.getColumn(content);
+        break;
+      case "Row":
+        widget = RowParser.getRow(content);
         break;
     }
     return widget;

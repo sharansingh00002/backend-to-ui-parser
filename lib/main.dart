@@ -56,9 +56,10 @@ class _MyHomePageState extends State<MyHomePage> {
   "padding": "EdgeInsets.only(top: 40)",
   "child" : {
   "Container": {
-    "child": {"Text": {
-    "text": "helllooo",
-    "style": "TextStyle(*fontSize*: 36, *color*: *0xffffffff*, *fontWeight*: *bold*)"
+    "child": {"Column": {
+    "mainAxisAlignment": "MainAxisAlignment.center",
+    "crossAxisAlignment": "CrossAxisAlignment.center",
+    "children": [{"Container": {"color": "0xffff11ff", "height": 150, "width": 150}}, {"Text": {"text": "helllooo"}}]
   }},
     "color": "0xffff11ff",
     "height": "300",
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "padding": "EdgeInsets.only(top: 10)",
     "borderRadius": 32,
     "alignment": "Alignment.center",
-    "gradient": \"LinearGradient(*colors*: [*0xff11ffff*, *0xffff11ff*], *begin*: *Alignment.topLeft*, *end*: *Alignment.bottomRight*)\"
+    "gradient": {"LinearGradient": {"colors": ["0xff11ffff", "0xffff11ff"], "begin": "Alignment.topLeft", "end": "Alignment.bottomRight"}} 
   }
   }
   }
