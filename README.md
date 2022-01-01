@@ -3,17 +3,17 @@
 A new Flutter project to parse Json data to render UI widgets
 
 
-## Getting Started
+## Parsers
 
 Parsers added currently - 
 
-Container
-Padding
-Center
-Text
-Column
-Row
-ListView
+Container\n
+Padding\n
+Center\n
+Text\n
+Column\n
+Row\n
+ListView\n
 Gradient - Linear & Radial
 
 Example code - 
