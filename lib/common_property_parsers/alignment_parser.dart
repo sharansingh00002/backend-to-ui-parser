@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-mixin AlignmentMixin{
+mixin AlignmentParser{
   static getAlignment(String alignmentString) {
     alignmentString = alignmentString.replaceAll("Alignment.", "");
     Alignment? alignment;

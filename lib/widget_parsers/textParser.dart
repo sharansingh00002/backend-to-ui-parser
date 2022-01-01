@@ -1,17 +1,16 @@
-import 'package:backend_to_ui_parser/mixins/padding_mixin.dart';
-import 'package:backend_to_ui_parser/mixins/text_style_mixin.dart';
+import 'package:backend_to_ui_parser/common_property_parsers/text_style_parser.dart';
 import 'package:flutter/material.dart';
 
 import '../parser/parser.dart';
 
-class TextParser with TextStyleMixin {
+class TextParser with TextStyleParser {
   TextParser._();
 
   static getText(content) {
     return Text(
       content['text'],
       style: content.containsKey('style')
-          ? TextStyleMixin.getTextStyle(content['style'])
+          ? TextStyleParser.getTextStyle(content['style'])
           : TextStyle(fontSize: 16, color: Colors.black),
     );
   }

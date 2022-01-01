@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-mixin AxisAlignmentMixin {
+mixin AxisAlignmentParser {
   static getAlignment(String alignmentString) {
     bool isMainAxis = alignmentString.contains("MainAxisAli");
     alignmentString = alignmentString

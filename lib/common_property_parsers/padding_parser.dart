@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 
-mixin PaddingMixin{
+mixin PaddingMethodParser{
   static getPadding(String paddingString) {
     EdgeInsets? padding;
     String paddingCase = paddingString.substring((paddingString.indexOf('EdgeInsets.') + 11));

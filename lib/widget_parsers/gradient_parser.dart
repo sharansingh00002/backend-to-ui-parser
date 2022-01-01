@@ -1,9 +1,7 @@
-import 'dart:convert';
+import 'package:backend_to_ui_parser/common_property_parsers/alignment_parser.dart';
 import 'package:flutter/material.dart';
 
-import '../mixins/alignment_mixin.dart';
-
-class GradientParser with AlignmentMixin {
+class GradientParser {
   GradientParser._();
 
   static getGradient(Map<String, dynamic> gradientMap) {
@@ -14,9 +12,9 @@ class GradientParser with AlignmentMixin {
         colorsList.add(Color(int.parse(element.toString())));
       });
       gradient = LinearGradient(
-          begin: AlignmentMixin.getAlignment(
+          begin: AlignmentParser.getAlignment(
               gradientMap["LinearGradient"]['begin'] ?? "Alignment.centerLeft"),
-          end: AlignmentMixin.getAlignment(
+          end: AlignmentParser.getAlignment(
               gradientMap["LinearGradient"]['end'] ?? "Alignment.centerRight"),
           colors: colorsList);
     } else if(gradientMap.keys.contains("RadialGradient")){
@@ -25,7 +23,7 @@ class GradientParser with AlignmentMixin {
         colorsList.add(Color(int.parse(element.toString())));
       });
       gradient = RadialGradient(
-          center: AlignmentMixin.getAlignment(
+          center: AlignmentParser.getAlignment(
               gradientMap["RadialGradient"]['center'] ?? "Alignment.center"),
           radius: double.parse('${gradientMap["RadialGradient"]['radius'] ?? '0.5'}'),
           colors: colorsList);

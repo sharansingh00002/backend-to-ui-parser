@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 
-class TextStyleMixin {
+class TextStyleParser {
   static getTextStyle(String textStyle) {
     TextStyle? style;
     textStyle = textStyle.trim();

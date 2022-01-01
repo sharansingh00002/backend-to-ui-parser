@@ -1,24 +1,21 @@
-import 'dart:convert';
-
-import 'package:backend_to_ui_parser/mixins/alignment_mixin.dart';
+import 'package:backend_to_ui_parser/common_property_parsers/alignment_parser.dart';
+import 'package:backend_to_ui_parser/common_property_parsers/padding_parser.dart';
 import 'package:backend_to_ui_parser/widget_parsers/gradient_parser.dart';
-import 'package:backend_to_ui_parser/mixins/padding_mixin.dart';
 import 'package:flutter/material.dart';
 
 import '../parser/parser.dart';
 
 class ContainerParser
-    with AlignmentMixin, PaddingMixin
     implements GradientParser {
   ContainerParser._();
 
   static getContainer(content) {
     return Container(
       alignment: content.containsKey('alignment')
-          ? AlignmentMixin.getAlignment(content['alignment'].toString())
+          ? AlignmentParser.getAlignment(content['alignment'].toString())
           : null,
       padding: content.containsKey('padding')
-          ? PaddingMixin.getPadding(content['padding'].toString())
+          ? PaddingMethodParser.getPadding(content['padding'].toString())
           : null,
       width: content.containsKey('width')
           ? double.parse(content['width'].toString())
