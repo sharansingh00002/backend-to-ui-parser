@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:backend_to_ui_parser/widget_parsers/column_parser.dart';
 import 'package:backend_to_ui_parser/widget_parsers/container_parser.dart';
+import 'package:backend_to_ui_parser/widget_parsers/listview_parser.dart';
 import 'package:backend_to_ui_parser/widget_parsers/padding_parser.dart';
 import 'package:backend_to_ui_parser/widget_parsers/row_parser.dart';
 import 'package:backend_to_ui_parser/widget_parsers/textParser.dart';
@@ -40,6 +41,9 @@ class Parser {
         break;
       case "Row":
         widget = RowParser.getRow(content);
+        break;
+      case "ListView":
+        widget = ListViewParser.getListView(content);
         break;
     }
     return widget;
