@@ -59,20 +59,24 @@ class _MyHomePageState extends State<MyHomePage> {
     "child": {"Column": {
     "mainAxisAlignment": "MainAxisAlignment.center",
     "crossAxisAlignment": "CrossAxisAlignment.center",
-    "children": [{"Container": {"color": "0xffff11ff", "height": 150, "width": 150}}, {"Text": {"text": "helllooo"}}]
+    "children": [{"Container": {"color": "0xffff11ff", "height": 150, "width": 150}},
+    {"Padding": {"padding": "EdgeInsets.only(top: 40)",
+    "child": {"Text": {"text": "helllooo", 
+    "style": {"fontSize": 24, "color": "0xffffffff", "fontWeight": "bold"}}}}}]
   }},
     "color": "0xffff11ff",
     "height": "300",
     "width": "300",
-    "padding": "EdgeInsets.only(top: 10)",
     "borderRadius": 32,
     "alignment": "Alignment.center",
-    "gradient": {"LinearGradient": {"colors": ["0xff11ffff", "0xffff11ff"], "begin": "Alignment.topLeft", "end": "Alignment.bottomRight"}} 
+    "gradient": {
+    "LinearGradient": {"colors": ["0xff11ffff", "0xffff11ff"],
+     "begin": "Alignment.topLeft",
+      "end": "Alignment.bottomRight"}} 
   }
   }
   }
 }''';
-
 
   @override
   Widget build(BuildContext context) {
