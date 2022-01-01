@@ -1,6 +1,6 @@
-# backend_to_ui_parser
+# Json/Backend response to UI parser
 
-A new Flutter project create widgets from a json String file 
+A new Flutter project to parse Json data to render UI widgets
 
 
 ## Getting Started
