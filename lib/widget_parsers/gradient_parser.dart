@@ -1,4 +1,4 @@
-import 'package:backend_to_ui_parser/common_property_parsers/alignment_parser.dart';
+import 'package:backend_to_ui_parser/attribute_parsers/alignment_parser.dart';
 import 'package:flutter/material.dart';
 
 class GradientParser {

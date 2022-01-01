@@ -1,5 +1,5 @@
-import 'package:backend_to_ui_parser/common_property_parsers/axis_alignment_parser.dart';
-import 'package:backend_to_ui_parser/common_property_parsers/children_parser.dart';
+import 'package:backend_to_ui_parser/attribute_parsers/axis_alignment_parser.dart';
+import 'package:backend_to_ui_parser/attribute_parsers/children_parser.dart';
 import 'package:flutter/material.dart';
 
 import '../parser/parser.dart';
